@@ -38,7 +38,7 @@ export default async function handler(req, res) {
 
     // පියවර 3: අවතාරය පූරණය කිරීම සහ ඇඳීම
     try {
-      const avatarImg = await loadImage(`https://ff.garena.com/images/avatars/${avatarId}.png`);
+      const avatarImg = await loadImage(`https://icons-freefire.vercel.app/ICONS/${avatarId}.png`);
       ctx.drawImage(avatarImg, 200, 150, 400, 500);
     } catch (err) {
       console.error('Avatar load error:', err);
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
     await Promise.all(
       clothes.slice(0, positions.length).map(async (itemId, i) => {
         try {
-          const itemImg = await loadImage(`https://ff.garena.com/images/items/${itemId}.png`);
+          const itemImg = await loadImage(`https://icons-freefire.vercel.app/ICONS/${itemId}.png`);
           const [x, y] = positions[i];
           ctx.drawImage(itemImg, x, y, 100, 100);
         } catch (err) {
